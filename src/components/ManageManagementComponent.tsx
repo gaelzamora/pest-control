@@ -8,7 +8,7 @@ import { BeatLoader } from "react-spinners";
 import { useState } from "react";
 import Avatar from '../assets/avatar.png';
 import { FaRegTrashAlt } from "react-icons/fa";
-import AddManagerModal from './AddManagerModal'; // Importar el modal
+import AddManagerModal from './AddManagerModal';
 
 function ManageManagementComponent() {
     const [search, setSearch] = useState("");

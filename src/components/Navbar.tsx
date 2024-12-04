@@ -4,7 +4,11 @@ import OptionsComponent from './OptionsComponent'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { useAuthStore } from '../store/auth'
 
-function Navbar() {
+type navbarProps = {
+    setShowComponent: (id: number) => void
+}
+
+function Navbar({setShowComponent}: navbarProps) {
 
     const logout = useAuthStore((State) => State.logout)
 
@@ -21,12 +25,14 @@ function Navbar() {
                     name={'general'} 
                     iterables={generalNavbar} 
                     key={'general'}
+                    setShowComponent={setShowComponent}
                 />
     
                 <OptionsComponent 
                     name={'others'} 
                     iterables={othersNavbar} 
                     key={'others'}
+                    setShowComponent={setShowComponent}
                 />
             </div>
     
