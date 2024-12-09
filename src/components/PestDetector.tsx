@@ -126,7 +126,7 @@ const PestDetector: React.FC = () => {
 
   return (
     <div className='mx-auto flex flex-col items-center justify-center'>
-      <video ref={videoRef} style={{ width: '100%', maxWidth: '600px', border: '1px solid black' }}></video>
+      <video ref={videoRef} style={{ width: '60%', maxWidth: '400px', border: '1px solid black' }}></video>
       <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
       <div>
         {detections.length > 0 ? (

@@ -70,7 +70,7 @@ function LoginPage() {
                   >
                   Login
                 </button>
-                <Link to={'/register'} className="mt-3 text-gray-500 text-xs ">¿Aun no tienes una cuenta?</Link>
+                <Link to={'/register'} className="mt-3 text-gray-500 text-xs ">¿Eres tecnico y quieres trabajar?</Link>
               </form>
       </section>
     </section>

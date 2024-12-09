@@ -1,14 +1,14 @@
 import LogoSmall from '../images/logo_small.png'
-import { generalNavbar, othersNavbar } from "../data/data"
 import OptionsComponent from './OptionsComponent'
 import { IoSettingsOutline } from 'react-icons/io5'
 import { useAuthStore } from '../store/auth'
 
 type navbarProps = {
-    setShowComponent: (id: number) => void
+    showComponent: string
+    setShowComponent: (name: string) => void
 }
 
-function Navbar({setShowComponent}: navbarProps) {
+function Navbar({showComponent, setShowComponent}: navbarProps) {
 
     const logout = useAuthStore((State) => State.logout)
 
@@ -23,26 +23,19 @@ function Navbar({setShowComponent}: navbarProps) {
     
                 <OptionsComponent 
                     name={'general'} 
-                    iterables={generalNavbar} 
                     key={'general'}
-                    setShowComponent={setShowComponent}
-                />
-    
-                <OptionsComponent 
-                    name={'others'} 
-                    iterables={othersNavbar} 
-                    key={'others'}
+                    showComponent={showComponent}
                     setShowComponent={setShowComponent}
                 />
             </div>
     
             <div 
-                className='rounded-md flex gap-2 cursor-pointer px-2 py-3 hover:bg-gray-200 duration-75 mx-6 mt-[30rem] font-semibold text-gray-600'
+                className='rounded-md flex gap-2 cursor-pointer px-2 py-3 hover:bg-gray-200 duration-75 mx-6 mt-[24rem] font-semibold text-gray-600'
                 onClick={logout}
             >
                 
-                <IoSettingsOutline className='w-6 h-6' />
-                <p className='font-semibold'>Logout</p>
+                <IoSettingsOutline className='w-4 h-5' />
+                <p className='text-sm font-semibold'>Logout</p>
             </div>
     
         </section>
